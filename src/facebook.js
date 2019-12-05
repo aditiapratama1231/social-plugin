@@ -39,4 +39,7 @@ let GetAccessToken = async () => {
     }
 }
 
-module.exports.GetUserFeeds = GetUserFeeds;
+module.exports = {
+    GetUserFeeds,
+    GetAccessToken
+}
