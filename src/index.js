@@ -10,7 +10,7 @@ app.get("/feeds", async (req, res) => {
         limit = req.query.limit
 
         const feeds = await facebook.GetUserFeeds(page, limit)
-        res.send(feeds.data)
+        res.send(feeds.data.feed)
     } catch (error) {
         res.send({
             "success": false,
