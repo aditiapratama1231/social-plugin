@@ -1,8 +1,9 @@
 require('dotenv').config()
 const express = require('express');
 const app = express()
-const port = 8000;
 const facebook = require('./facebook')
+
+const port = process.env.PORT;
 
 app.get("/feeds", async (req, res) => {
     try {
@@ -20,5 +21,5 @@ app.get("/feeds", async (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log("listening on port : " + process.env.PORT);
+    console.log("listening on port : " + port);
 })

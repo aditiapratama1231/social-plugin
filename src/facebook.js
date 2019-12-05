@@ -12,7 +12,7 @@ let GetUserFeeds = async (page = 1, limit = 10) => {
         
         return await axios.get(feedUrl, {
             params: {
-                fields: `feed.offset(${offset}).limit(${limit})`,
+                fields: `feed.offset(${offset}).limit(${limit}){description,message,name}`,
                 access_token: access_token
             }
         });
