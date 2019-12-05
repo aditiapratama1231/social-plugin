@@ -1,16 +1,18 @@
 const axios = require('axios');
 require('dotenv').config()
 
-let GetUserFeeds = async () => {
+let GetUserFeeds = async (page = 1, limit = 10) => {
     try {
         userId = process.env.FACEBOOK_USER_ID
-        feedUrl = process.env.FACEBOOK_HOST + userId + "/feed"
+        feedUrl = process.env.FACEBOOK_HOST + userId
         getToken = await GetAccessToken()
         
         access_token = getToken.data.access_token
+        offset = (page - 1) * limit
         
         return await axios.get(feedUrl, {
             params: {
+                fields: `feed.offset(${offset}).limit(${limit})`,
                 access_token: access_token
             }
         });
@@ -37,4 +39,4 @@ let GetAccessToken = async () => {
     }
 }
 
-module.exports.GetUserFeeds = GetUserFeeds();
+module.exports.GetUserFeeds = GetUserFeeds;

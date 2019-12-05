@@ -6,7 +6,10 @@ const facebook = require('./facebook')
 
 app.get("/feeds", async (req, res) => {
     try {
-        const feeds = await facebook.GetUserFeeds
+        page = req.query.page
+        limit = req.query.limit
+
+        const feeds = await facebook.GetUserFeeds(page, limit)
         res.send(feeds.data)
     } catch (error) {
         res.send({
