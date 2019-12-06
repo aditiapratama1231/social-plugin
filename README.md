@@ -7,6 +7,7 @@ App for streaming facebook feeds
 
 ```
 npm install
+npm run dev
 ```
 
 ## Run App via :
