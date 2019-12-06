@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "node src/index.js",
-    "test": "jest --verbose ./test" 
+    "test": "node_modules/.bin/jest --verbose ./test"
   },
   "author": "",
   "license": "ISC",
