@@ -3,7 +3,27 @@
 
 App for streaming facebook feeds
 
-## Run App
+
+# Setup
+
+Copy .env file
+
+```
+cp .env.example .env
+```
+
+Fill .env below with your own credentials
+
+```
+FACEBOOK_HOST=https://graph.facebook.com/
+FACEBOOK_CLIENT_ID=
+FACEBOOK_CLIENT_SECRET=
+FACEBOOK_USER_ID=
+```
+
+# How to Run
+
+You need node v10.x or later to run this project
 
 ```
 npm install
